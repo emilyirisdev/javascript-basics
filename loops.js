@@ -164,4 +164,55 @@ console.log(todo.id);
 
 HIGH ORDER ARRAY METHODS (RECOMMENDED)
 
+FOR EACH - LOOPS THROUGH ARRAYS
+
+todos.forEach(function(todo) {
+	console.log(todo.text);
+});
+
+Take out trash
+Meeting with boss
+Dentist appt
+
+MAP - CREATE NEW ARRAY FROM ARRAY
+
+const todoText = todos.map(function(todo) {
+	return todo.text;
+});
+console.log(todoText);
+
+0: “Take out trash”
+1: “Meeting with boss”
+2: “Dentist appt”
+length: 3
+
+FILTER - CREATE NEW ARRAY FROM CONDITION
+
+const todoCompleted = todos.filter(function(todo) {
+	return todo.isCompleted === true;
+});
+
+console.log(todoCompleted);
+
+0:
+	id: 1
+	isCompleted: true
+	text: “Take out trash”
+1:
+	id: 2
+	isCompleted: true
+	text: “Meeting with boss”
+
+CHAIN HIGH ORDERS TOGETHER
+
+const todoCompleted = todos.filter(function(todo) {
+	return todo.isCompleted === true;
+}).map(function(todo) {
+	return todo.text;
+})
+
+console.log(todoCompleted);
+
+(2) [“Take out trash”, “Meeting with boss”]
+
 
